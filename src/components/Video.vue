@@ -103,14 +103,7 @@ export default {
       this.question = false;
       let myVideo = this.getIdVideo();
       if (myVideo.currentTime <= value && myVideo.currentTime >= value - 1) {
-        if (
-          value === 28 ||
-          value === 39 ||
-          value === 50 ||
-          value === 95 ||
-          value === 89 ||
-          value === 84
-        ) {
+        if ([28,39,50,95,89,84].includes(value)) {
           myVideo.currentTime = 0;
           myVideo.pause();
           clearInterval(this.intervalTime);
